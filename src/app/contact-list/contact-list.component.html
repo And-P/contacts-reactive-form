@@ -3,9 +3,7 @@
     <img src="/assets/plus-no-circle.png" class="button-image" />
     Add Contact
   </button>
-  <h2>
-    Favorite Contacts
-  </h2>
+  <h2> Favorite Contacts </h2>
   <table>
     <thead>
       <th>Name</th>
@@ -21,7 +19,8 @@
           <td>{{contact.firstName}} {{contact.lastName}}</td>
           <td><span *ngIf="contact.phone">{{contact.phone.phoneNumber}}</span></td>
           <td *ngIf="contact.address">
-            {{contact.address.streetAddress}}, {{contact.address.city}},
+            {{contact.address.streetAddress}}, 
+            {{contact.address.city}},
             {{contact.address.state}},
             {{contact.address.postalCode}}
           </td>
@@ -29,9 +28,7 @@
       </ng-container>
     </tbody>
   </table>
-  <h2>
-    All Contacts
-  </h2>
+  <h2>All Contacts</h2>
   <table>
     <thead>
       <th>Name</th>
@@ -47,7 +44,8 @@
           <td>{{contact.firstName}} {{contact.lastName}}</td>
           <td><span *ngIf="contact.phone">{{contact.phone.phoneNumber}}</span></td>
           <td *ngIf="contact.address">
-            {{contact.address.streetAddress}}, {{contact.address.city}},
+            {{contact.address.streetAddress}}, 
+            {{contact.address.city}},
             {{contact.address.state}},
             {{contact.address.postalCode}}
           </td>
