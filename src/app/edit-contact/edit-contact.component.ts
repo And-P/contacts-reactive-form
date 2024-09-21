@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactsService } from '../contacts/contacts.service';
+import { phoneTypeValues, addressTypeValues } from '../contacts/contact.model';
 
 @Component({
   templateUrl: './edit-contact.component.html',
@@ -9,17 +10,13 @@ import { ContactsService } from '../contacts/contacts.service';
 })
 export class EditContactComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute,
-    private contactsService: ContactsService,
-    private router: Router,
-    private fb: FormBuilder,
-  ) { }
+   phoneTypes = phoneTypeValues;
+   addressTypes = addressTypeValues;
 
-  
   contactForm = this.fb.nonNullable.group({
 
     id: '',
+    personal: false,
     firstName: '', 
     lastName: '', 
     dateOfBirth: <Date | null> null, 
@@ -36,12 +33,25 @@ export class EditContactComponent implements OnInit {
       state: '',
       postalCode: '',
       addressType: '', 
-    })
+    }),
+
+    notes: '',
+
   });
+
+  constructor(
+    private route: ActivatedRoute,
+    private contactsService: ContactsService,
+    private router: Router,
+    private fb: FormBuilder,
+  ) { }
+
 
 
   saveContact() {
     // console.log(this.contactForm.controls.firstName.value);
+    // console.log(this.contactForm.value.personal, typeof this.contactForm.value.personal);
+    console.log(this.contactForm.value.dateOfBirth, typeof this.contactForm.value.dateOfBirth);
     this.contactsService.saveContact(this.contactForm.getRawValue()).subscribe({
       next: () => this.router.navigate(['/contacts'])
     });
