@@ -12,7 +12,7 @@ export class InMemoryContactsApi implements InMemoryDbService {
         lastName: 'Doodleplumb',
         dateOfBirth: new Date('1994/05/05'), // .toISOString() '1994-05-05T06:00:00.000Z'
         favoritesRanking: 0,
-        phone: { phoneNumber: '555-765-4321', phoneType: 'mobile' },
+        phones: [{ phoneNumber: '555-765-4321', phoneType: 'mobile' }],
         address: {
           streetAddress: '777 Whimsy Lane',
           city: 'Gleeberg City',
@@ -30,7 +30,7 @@ export class InMemoryContactsApi implements InMemoryDbService {
         lastName: 'Flungford',
         dateOfBirth: new Date('1988/10/05'), // .toISOString()
         favoritesRanking: 0,
-        phone: { phoneNumber: '555-877-5678', phoneType: 'mobile' },
+        phones: [{ phoneNumber: '555-877-5678', phoneType: 'mobile' }],
         address: {
           streetAddress: '543 Lullaby Lane',
           city: 'Sleepytown',
@@ -48,7 +48,10 @@ export class InMemoryContactsApi implements InMemoryDbService {
         lastName: 'Giggleworth',
         dateOfBirth: new Date('1986/11/08'), // .toISOString()
         favoritesRanking: 1,
-        phone: { phoneNumber: '555-123-4567', phoneType: 'mobile' },
+        phones: [
+          { phoneNumber: '555-123-4567', phoneType: 'mobile' },
+          { phoneNumber: '980-355-7861', phoneType: 'work' }
+        ],
         address: {
           streetAddress: '123 Merriment Avenue',
           city: 'Dorado City',
@@ -66,7 +69,7 @@ export class InMemoryContactsApi implements InMemoryDbService {
         lastName: 'Hitchcov',
         dateOfBirth: new Date('1991/12/08'), // .toISOString()
         favoritesRanking: 1,
-        phone: { phoneNumber: '9-8855-4451', phoneType: 'mobile' },
+        phones: [{ phoneNumber: '9-8855-4451', phoneType: 'mobile' }],
         address: {
           streetAddress: 'Main Town Avenue',
           city: 'San Francisco',

@@ -6,7 +6,7 @@ export interface Contact {
   lastName: string,
   dateOfBirth: Date | null, // string,
   favoritesRanking: number | null,
-  phone: Phone, // Partial<Phone>
+  phones: Phone[], // Partial<Phone>
   address: Address, // Partial<Address>
   notes: string,
 }
